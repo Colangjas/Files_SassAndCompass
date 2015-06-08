@@ -1,3 +1,4 @@
 function test() {
-	return "Hello";
+	return "Hi there";
+	
 }

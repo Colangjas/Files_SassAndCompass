@@ -1,0 +1,1 @@
+function test(){return"Other"}function test(){return"Hi there"}
