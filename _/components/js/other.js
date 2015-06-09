@@ -1,3 +1,3 @@
 function test() {
-	return "Other";
+	return "Hello world";
 }
