@@ -14,7 +14,7 @@ $large                : 75em;
 //Content ------------------------------------
 .layout {
   @include container;
-  padding: 3%;
+  padding: 0 3%;
 
   //Primary ------------------------------------
   .primary {
@@ -73,6 +73,7 @@ header {
   .hero {
     width: 100%;
     @include at-breakpoint($medium) {
+	@include single-transition(all, 1s, ease-out);
       position: relative;
       display: block;
       width: 100%;
@@ -100,6 +101,9 @@ header {
 .navigation {
   background: lighten($darkblue, 15);
   ul.nav {
+  @include at-breakpoint($small) {
+	@include horizontal-list;
+  }
     li {
       i {
         color: lighten($yellow, 20);
@@ -107,14 +111,67 @@ header {
       } //icons
 
       a {
+	@include single-transition(all, .5s, ease-out);
         display: block;
         text-decoration: none;
         padding: 5px 10px;
         color: $paleryellow;
+		
+		&:hover {
+			background: $orange;
+			a{
+				color: $yellow, 30;
+			}
+		}
+		
       } //a
     } //li
   } //ul.nav
 } // navigation
+
+// Speakers List ---------------------------
+.speakerslist {
+	@include at-breakpoint($medium){
+		text-align: center;
+		@include background(linear-gradient(top, lighten($darkblue, 3), $darkerblue));
+		color: rgba($paleyellow, 0.5);
+		overflow: hidden;
+		padding-bottom: 10px;
+		#{headings()} {
+			text-shadow: none;
+			border-bottom: none !important;
+		}
+		
+		h1 {
+			color: $green;
+			font-size: 2.6rem;
+			line-height: 1em;
+			@include at-breakpoint($large) {
+				font-size: 4rem;
+				line-height: 1em;
+			}
+		}
+		
+		h3{
+			color: lighten($yellow, 10);
+			line-height: .9rem;
+		}
+		
+		.small {
+			padding-top: .4em !important;
+			line-height: 1em;
+			color: lighten($darkblue, 30);
+			a {
+				color: lighten($darkblue, 30);
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		
+		}
+} // Speakerslist
 
 //footer ------------------------------------
 footer {
