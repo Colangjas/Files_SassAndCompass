@@ -1,5 +1,9 @@
-$mycolour: #563DF3;
+@import "compass";
+@import "compass/reset";
+@import "susy";
 
-body {
-	background: $mycolour;
-}
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "modules";
